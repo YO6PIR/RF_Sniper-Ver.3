@@ -1,5 +1,7 @@
 # RF_Sniper-Ver.3
 Radio frequency spectrum analyzer with color display and Touch-Screen, in the range (0.5...150)MHz after a project by EB7ME
+<img width="629" height="550" alt="image" src="https://github.com/user-attachments/assets/39b2f6ef-31b7-467e-b16b-3fed1aea8b9b" />
+
 This device is inspired by the project of Andreas - EB7ME who had the idea to modify the original Antuino project with an STM32 processor and an ILI9341 color display with touch-screen.
 I really liked this project, and I took it over immediately when I saw it. Then I developed it, bringing many improvements thanks to Andreas who made the source code available to me, and you can see what came out.
 
