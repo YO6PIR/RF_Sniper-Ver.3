@@ -5,3 +5,5 @@ I really liked this project, and I took it over immediately when I saw it. Then 
 
 The original design of the EB7ME was designed to be controlled by a push-button encoder, and some commands to be taken over by the Touch-Screen. I made some changes to the software that allowed me to completely remove the encoder and its push-button, and integrated all the commands 100% Touch-Screen. In addition, I added additional functions that improved the overall appearance of the device.
 The device has 5 main functions:
+<img width="632" height="395" alt="image" src="https://github.com/user-attachments/assets/0ab02127-1c81-48d4-921a-e899235fbfb4" />
+
