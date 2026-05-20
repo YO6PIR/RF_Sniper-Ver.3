@@ -4,8 +4,4 @@ Radio frequency spectrum analyzer with color display and Touch-Screen, in the ra
 This device is inspired by the project of Andreas - EB7ME who had the idea to modify the original Antuino project with an STM32 processor and an ILI9341 color display with touch-screen.
 I really liked this project, and I took it over immediately when I saw it. Then I developed it, bringing many improvements thanks to Andreas who made the source code available to me, and you can see what came out.
 The original design of the EB7ME was designed to be controlled by a push-button encoder, and some commands to be taken over by the Touch-Screen. I made some changes to the software that allowed me to completely remove the encoder and its push-button, and integrated all the commands 100% Touch-Screen. In addition, I added additional functions that improved the overall appearance of the device.
-The device has 5 main functions:
-SWR-meter with a 300x180px grid-graphic display thanks to the use of an ILI9341 LCD with a maximum resolution of 320x240px. The VSWR ratio measurement mode is determined by the Return-Loss value in dBm read on a resistive bridge where the antenna is one of the branches.
-Changing the working modes is done by touching the upper right corner of the screen.
-<img width="632" height="395" alt="image" src="https://github.com/user-attachments/assets/0ab02127-1c81-48d4-921a-e899235fbfb4" />
-
+More details for this project, at: https://qsl.net/yo6pir/snipper3.html
