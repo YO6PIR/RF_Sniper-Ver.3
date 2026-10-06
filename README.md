@@ -37,7 +37,7 @@ Key design goals:
 ### Grid-Dip Meter Mode
 
 <p align="center">
- <img width="632" height="395" alt="image" src="https://github.com/user-attachments/assets/2c63fed9-9e1f-4690-9faf-68c4364cb849" />
+ <img width="359" height="696" alt="image" src="https://github.com/user-attachments/assets/d5eb5106-6b56-4ecc-a500-aaaf66898eb2" />
 </p>
 
 *Grid-Dip Meter mode with analog-style needle gauge, frequency display in MHz, and control buttons (UP/DOWN for tuning, MODE to switch between GDO and STRENGTH meter, SCAN to enter graphical sweep mode).*
@@ -45,7 +45,7 @@ Key design goals:
 ### SWR Measurement Display
 
 <p align="center">
-  <img width="600" alt="[PLACEHOLDER: SWR Mode - Screenshot showing yellow SWR trace on graph, with SWR values and frequencies displayed at bottom]" src="PLACEHOLDER_SWR_DISPLAY" />
+ <img width="632" height="395" alt="image" src="https://github.com/user-attachments/assets/2c63fed9-9e1f-4690-9faf-68c4364cb849" />
 </p>
 
 *SWR measurement mode showing antenna impedance matching across frequency range, with minimum and maximum SWR values and corresponding frequencies clearly visible.*
