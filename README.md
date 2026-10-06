@@ -30,14 +30,14 @@ Key design goals:
 
 ### Graphical Scan Display
 
-<img width="632" height="395" alt="image" src="https://github.com/user-attachments/assets/2c63fed9-9e1f-4690-9faf-68c4364cb849" />
+
 
 *Screenshot of VOB or SNA measurement mode showing real-time graphical sweep across frequency range, with minimum and maximum signal levels indicated.*
 
 ### Grid-Dip Meter Mode
 
 <p align="center">
-  <img width="600" alt="[PLACEHOLDER: Grid-Dip Meter - Screenshot showing analog needle gauge indicator with frequency display and MODE/SCAN buttons]" src="PLACEHOLDER_GDO_MODE" />
+ <img width="632" height="395" alt="image" src="https://github.com/user-attachments/assets/2c63fed9-9e1f-4690-9faf-68c4364cb849" />
 </p>
 
 *Grid-Dip Meter mode with analog-style needle gauge, frequency display in MHz, and control buttons (UP/DOWN for tuning, MODE to switch between GDO and STRENGTH meter, SCAN to enter graphical sweep mode).*
