@@ -26,6 +26,34 @@ Key design goals:
 
 ---
 
+## Gallery
+
+### Graphical Scan Display
+
+<p align="center">
+  <img width="600" alt="[PLACEHOLDER: VOB/SNA Scan Mode - Screenshot showing graphical frequency sweep with cyan or green trace, peak/min values displayed at bottom]" src="PLACEHOLDER_SCAN_DISPLAY" />
+</p>
+
+*Screenshot of VOB or SNA measurement mode showing real-time graphical sweep across frequency range, with minimum and maximum signal levels indicated.*
+
+### Grid-Dip Meter Mode
+
+<p align="center">
+  <img width="600" alt="[PLACEHOLDER: Grid-Dip Meter - Screenshot showing analog needle gauge indicator with frequency display and MODE/SCAN buttons]" src="PLACEHOLDER_GDO_MODE" />
+</p>
+
+*Grid-Dip Meter mode with analog-style needle gauge, frequency display in MHz, and control buttons (UP/DOWN for tuning, MODE to switch between GDO and STRENGTH meter, SCAN to enter graphical sweep mode).*
+
+### SWR Measurement Display
+
+<p align="center">
+  <img width="600" alt="[PLACEHOLDER: SWR Mode - Screenshot showing yellow SWR trace on graph, with SWR values and frequencies displayed at bottom]" src="PLACEHOLDER_SWR_DISPLAY" />
+</p>
+
+*SWR measurement mode showing antenna impedance matching across frequency range, with minimum and maximum SWR values and corresponding frequencies clearly visible.*
+
+---
+
 ## Key Features
 
 - **Frequency Coverage** — 0.5 MHz to 150 MHz
