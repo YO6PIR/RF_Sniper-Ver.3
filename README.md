@@ -29,8 +29,10 @@ Key design goals:
 ## Gallery
 
 ### Graphical Scan Display
+<p align="center">
 
-
+<img width="608" height="410" alt="image" src="https://github.com/user-attachments/assets/e4601f16-8e9a-4905-a00a-f9bd1b2ef260" />
+</p>
 
 *Screenshot of VOB or SNA measurement mode showing real-time graphical sweep across frequency range, with minimum and maximum signal levels indicated.*
 
