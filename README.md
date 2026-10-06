@@ -1,129 +1,67 @@
 # RF_Sniper-Ver.3
 
 <p align="center">
-  <img width="600" alt="RF_Sniper-Ver.3 device" src="https://github.com/user-attachments/assets/781c1911-c39b-4b4c-88e4-c0b5dd19047e" />
+  <img width="600" alt="RF_Sniper-Ver.3 portable RF analyzer" src="https://github.com/user-attachments/assets/781c1911-c39b-4b4c-88e4-c0b5dd19047e" />
 </p>
 
-A handheld radio frequency spectrum analyzer with touchscreen interface and real-time frequency analysis capability.
+A handheld RF measurement and tuning instrument for the 0.5–150 MHz band with touchscreen interface and graphical sweep display.
 
-RF_Sniper-Ver.3 is a portable RF measurement instrument designed for field spectrum monitoring, signal detection, and frequency analysis in the VHF/UHF band.
+RF_Sniper-Ver.3 is a practical field instrument designed for frequency scanning, signal level measurement, SWR evaluation, and grid-dip operation. Built around an STM32 microcontroller, Si5351 frequency synthesizer, and color TFT display, it provides intuitive touch-based control for RF exploration and antenna tuning work.
 
-The device combines a custom RF front-end, high-speed ADC sampling, DSP-based signal processing, and a color touchscreen interface into a compact handheld platform suitable for amateur radio, RF engineering, and signal investigation.
+---
 
 ## Overview
 
-RF_Sniper-Ver.3 is a continuation and improvement of the original Antuino project, adapted with STM32 processor performance and modern touchscreen interface design.
+RF_Sniper-Ver.3 combines the original Antuino concept by EB7ME with modern embedded systems design, delivering a compact, battery-powered RF analyzer suitable for amateur radio, signal investigation, and RF experimentation.
 
-The instrument provides:
+The instrument displays real-time sweeps across user-defined frequency ranges and allows direct manipulation of measurement parameters through a responsive touchscreen interface.
 
-- real-time spectrum visualization
-- frequency search and signal detection
-- signal strength measurement (RSSI)
-- peak detection and hold
-- frequency resolution and zoom capability
-- touchscreen-based navigation and control
+Key design goals:
 
-The measurement display is intuitive and optimized for field use, with modes for broadband scanning and detailed frequency inspection.
+- **Portable operation** — battery-powered field use
+- **Practical measurement** — level, SWR, and signal strength in real-world scenarios
+- **Intuitive control** — touch-based interface with visual feedback
+- **Flexibility** — multiple operating modes and calibration options
+- **Reliability** — proven firmware architecture and stable parameter storage
+
+---
 
 ## Key Features
 
-- **Real-Time Spectrum Analyzer** — live RF spectrum display
-- **Frequency Range** — 0.5 MHz to 150 MHz coverage
-- **Signal Detection** — automatic peak detection and identification
-- **RSSI Measurement** — received signal strength indicator
-- **Frequency Zoom** — detailed inspection of selected bands
-- **Peak Hold** — signal tracking and peak memory
-- **Touch Interface** — full touchscreen control and navigation
-- **Color Display** — high-contrast ILI9341 TFT screen
-- **Portable Design** — compact battery-powered handheld device
+- **Frequency Coverage** — 0.5 MHz to 150 MHz
+- **Multiple Measurement Modes** — VOB, SWR, SNA, GDO, STR
+- **Touchscreen Interface** — intuitive graphical control
+- **Real-Time Sweep Display** — continuous frequency scanning with graphical output
+- **Center Frequency & Span Tuning** — adjust measurement range directly from screen
+- **Peak Detection and Hold** — capture transient signals
+- **SWR Measurement** — antenna matching evaluation
+- **Grid-Dip Functionality** — tuned circuit resonance detection
+- **Signal Strength Meter** — analog-style indicator display
+- **Calibration Menus** — touchscreen calibration for ADC, Si5351, and SWR offset
+- **EEPROM Storage** — persistent settings and configuration
+- **Battery Status Indicator** — real-time battery level display
+- **Portable Design** — compact handheld platform
 
 ---
 
-## Hardware Platform
+## Hardware Architecture
 
-RF_Sniper-Ver.3 is built on a high-performance embedded platform optimized for RF measurement.
+RF_Sniper-Ver.3 is built on a compact embedded platform optimized for field RF measurement.
 
 | Component | Selection |
 |---|---|
-| Microcontroller | STM32F4 series |
-| Display | ILI9341 color TFT display |
-| Touch Interface | Capacitive or resistive touch controller |
-| ADC | High-speed internal ADC |
-| RF Front-End | Optimized for 0.5–150 MHz |
-| DSP | ARM CMSIS-DSP for signal processing |
-| Storage | EEPROM for settings and history |
-| Power | Battery-powered operation |
+| **Microcontroller** | STM32F103CBT6 (ARM Cortex-M3, 72 MHz) |
+| **Display** | ILI9341 TFT, 320 × 240 pixels |
+| **Touch Interface** | XPT2046 resistive touch controller |
+| **Frequency Generator** | Si5351 programmable clock generator |
+| **RF Front-End** | Custom analog signal conditioning |
+| **ADC** | STM32 internal 12-bit ADC |
+| **Storage** | EEPROM 24Cxx series for configuration |
+| **Power Supply** | Battery-powered, regulated 3.3V |
 
----
+### Signal Path
 
-## Spectrum Analyzer Capabilities
-
-### Real-Time Frequency Display
-
-The device scans the RF spectrum in real-time and displays signal strength across the frequency range.
-
-Features include:
-
-- continuous spectrum update
-- marker for peak signal
-- frequency axis scaling
-- dB level indication
-
-### Signal Detection and Peak Hold
-
-Automatic detection of signals above the noise floor with optional peak memory for tracking transient signals.
-
-The display can hold the peak level for inspection even after the signal has passed.
-
-### Frequency Zoom and Detail View
-
-Zoom into specific frequency regions for detailed inspection of complex signal environments.
-
-The zoom function allows precise identification of narrow-band signals and frequency drift measurement.
-
-### RSSI Measurement
-
-Receive Signal Strength Indicator (RSSI) provides quantitative signal level measurement in dB and can be logged for trend analysis.
-
----
-
-## Software Architecture
-
-RF_Sniper-Ver.3 is developed in C/C++ using the STM32 HAL and ARM CMSIS-DSP libraries.
-
-Major software components include:
-
-- STM32 Hardware Abstraction Layer (HAL)
-- ARM CMSIS-DSP for FFT and signal processing
-- TFT_eSPI or custom display driver
-- custom RF front-end interface
-- custom touch input handling
-- custom measurement algorithms
-- custom frequency analysis and visualization
-
-The firmware is organized into layers:
-
-```text
-┌─────────────────────────────┐
-│      Touch Interface        │
-├─────────────────────────────┤
-│   Measurement / Analysis    │
-├─────────────────────────────┤
-│        DSP / FFT            │
-├─────────────────────────────┤
-│       ADC / Sampling        │
-├─────────────────────────────┤
-│      RF Front-End           │
-└─────────────────────────────┘
 ```
-
----
-
-## Signal Processing Pipeline
-
-The RF front-end converts analog signals to digital samples, which are then processed through DSP and FFT stages for spectrum analysis.
-
-```text
 RF Input (0.5–150 MHz)
      │
      ▼
@@ -133,83 +71,239 @@ Analog Front-End
 ADC Sampling
      │
      ▼
-Digital Buffer
-     │
-     ▼
-DSP Processing
-     ├── FFT Analysis
-     ├── Peak Detection
-     ├── Level Measurement
-     └── Frequency Calculation
+Measurement Computation
+     ├── Level (dBm)
+     ├── SWR Calculation
+     └── Peak Detection
      │
      ▼
 Display Rendering
+     │
+     ▼
+Touch Response
+```
+
+---
+
+## Operating Modes
+
+### VOB Mode
+
+Displays transmitted or received signal level across the frequency range. Useful for:
+
+- Power level sweep
+- signal presence mapping
+- broadband measurement
+
+### SNA Mode
+
+Signal analyzer mode for examining signal strength characteristics. Similar to VOB but with different calibration and display scaling.
+
+### SWR Mode
+
+Specialized mode for antenna tuning and impedance matching. Measures reflection coefficient and converts to SWR for evaluation.
+
+Calibration includes:
+
+- 50-ohm reference calibration
+- offset adjustment for return loss
+- min/max frequency tracking
+
+### GDO Mode (Grid-Dip Operation)
+
+Analog-style grid-dip meter mode using an analog needle gauge and fine frequency control.
+
+- Single-frequency operation
+- visual resonance indication
+- precision tuning with UP/DOWN buttons
+- toggle between GDO and STRENGTH meter styles
+
+### STR Mode (Strength Meter)
+
+Analog-style signal strength indicator mode with needle gauge and dBm-scaled display.
+
+---
+
+## Software Features
+
+### Graphical Scan Display
+
+- continuous sweep across center ± span
+- real-time trace rendering in color
+- automatic peak and minimum tracking
+- overlay display of min/max frequency and values
+- frequency marker for spot measurement
+
+### Touch Interface
+
+- center frequency adjustment via virtual keyboard
+- span selection from preset list
+- reference level (dB) adjustment
+- Y-axis division scaling
+- quick preset frequency templates (ham bands)
+
+### Calibration System
+
+On-screen calibration menus allow adjustment of:
+
+- **Touch calibration** — 5-point touchscreen calibration
+- **Si5351 crystal correction** — frequency accuracy tuning
+- **Local oscillator frequency** — LO adjustment for measurement offset
+- **SWR calibration** — return-loss offset for antenna matching
+
+### Settings Storage
+
+All calibration data and user preferences are saved to EEPROM and recalled on power-up.
+
+---
+
+## Measurement Techniques
+
+### Signal Level (dBm)
+
+The firmware reads ADC samples from the RF input and converts them to a dBm-equivalent value using:
+
+```
+dBm = (400 * voltage) - 850 (linear approximation)
+```
+
+Calibration offset can be applied for accuracy.
+
+### SWR Calculation
+
+SWR is computed from the reflected power measurement using:
+
+```
+SWR = (R_antenna + 50) / (R_antenna - 50)
+```
+
+where the antenna resistance is derived from the ADC measurement of reflection coefficient.
+
+### Peak Detection
+
+The firmware continuously tracks maximum and minimum signal levels across each frequency sweep, displaying:
+
+- frequency of max/min signal
+- absolute level at that frequency
+- updated dynamically as the scan progresses
+
+---
+
+## Building and Uploading
+
+### Prerequisites
+
+- Arduino IDE with STM32 board support (stm32duino)
+- USB-to-serial programmer or ST-Link debugger
+- Required libraries:
+  - `Adafruit_ILI9341`
+  - `XPT2046_Touchscreen`
+  - `si5351` (Si5351 library)
+  - `at24c02` (EEPROM library)
+
+### Compilation
+
+1. Install STM32 board package via Arduino Boards Manager
+2. Select board: **Generic STM32F1 series**
+3. Select variant: **STM32F103CB (20k RAM, 128k Flash)**
+4. Configure upload method (USB-serial or ST-Link)
+5. Compile and upload the sketch
+
+```bash
+# Verify compilation
+arduino-cli compile --fqbn STMicroelectronics:stm32:GenF1 RF_Snipper_V3.ino
+
+# Upload to board
+arduino-cli upload --fqbn STMicroelectronics:stm32:GenF1 \
+  -p /dev/ttyUSB0 RF_Snipper_V3.ino
+```
+
+### First Power-Up
+
+On initial startup, the firmware enters the settings menu if the touch screen is held down. Complete:
+
+1. **Touch Calibration** — tap targets at screen corners
+2. **Si5351 Calibration** — adjust 10 MHz reference against frequency meter
+3. **Local Oscillator Frequency** — set LO offset for your measurement mode
+4. **SWR Return-Loss Adjustment** — calibrate with 50-ohm termination
+5. Press EXIT to save and restart
+
+---
+
+## Project Structure
+
+```
+RF_Sniper-Ver.3/
+├── RF_Snipper_V3.ino       # main firmware and initialization
+├── Scan.ino                # sweep and measurement loops
+├── Display.ino             # TFT rendering and UI
+├── TouchScreen.ino         # touch event handling
+├── GridDipMeter.ino        # GDO / analog meter mode
+├── Settings.ino            # calibration menus
+├── Keypad4x4.ino           # virtual keyboard input
+├── Push_Keys.ino           # button handling
+├── Si5351.ino              # frequency synthesizer control
+├── EEprom.ino              # EEPROM read/write
+├── Smeter_bitmap.h         # analog meter face bitmap
+└── LICENSE                 # GNU GPL v2.0
 ```
 
 ---
 
 ## Use Cases
 
-RF_Sniper-Ver.3 is useful for:
+RF_Sniper-Ver.3 is designed for:
 
-- **Amateur Radio** — band monitoring and signal hunting
-- **RF Engineering** — field measurements and spectrum survey
-- **Signal Investigation** — identifying unknown transmissions
-- **Frequency Planning** — detecting interference and occupancy
-- **Educational Use** — learning about RF and spectrum analysis
-- **Portable Measurements** — handheld field operations
-
----
-
-## Operating Modes
-
-### Scan Mode
-
-Continuous sweep across the frequency range with real-time peak detection.
-
-### Zoom Mode
-
-Detailed inspection of a selected frequency band with finer resolution.
-
-### Peak Hold Mode
-
-Single measurement with peak signal hold for transient detection.
-
-### History Mode
-
-Review of previously recorded measurements and signal logs.
+- **Antenna Tuning** — visualize impedance across frequency
+- **Band Exploration** — scan ham radio bands for activity
+- **Signal Investigation** — locate unknown RF sources
+- **Frequency Planning** — check interference and occupancy
+- **Receiver Testing** — measure RF input levels
+- **Transmitter Checkout** — quick frequency and level verification
+- **Educational Use** — learning RF measurement principles
+- **Portable Testing** — handheld field operations
 
 ---
 
 ## Development History
 
-RF_Sniper-Ver.3 evolved from the original Antuino project by EB7ME.
+RF_Sniper-Ver.3 evolved from the original Antuino project created by Andreas (EB7ME) in 2019.
 
-Major improvements include:
+**Major improvements in this version:**
 
-- STM32F4 processor upgrade for faster processing
-- ILI9341 color display implementation
-- touchscreen interface development
-- improved RF front-end design
-- enhanced DSP algorithms
-- better measurement accuracy
-- refined user interface
+- STM32F103 processor for improved performance
+- ILI9341 color TFT display with full touch control
+- redesigned UI for touchscreen operation
+- enhanced calibration procedures
+- refined measurement algorithms
+- improved battery monitoring
+- EEPROM-based persistent configuration
+- grid-dip meter with analog needle gauge
 
-The project combines the original concept with modern embedded system design practices.
+The project maintains the core concept of a practical, handheld RF measurement tool while incorporating modern embedded design practices.
 
 ---
 
 ## Project Status
 
-RF_Sniper-Ver.3 is a functional portable RF measurement instrument and is actively under development.
+**Version:** 3.5 (as of December 2025)
 
-It is primarily intended for:
+RF_Sniper-Ver.3 is a functional, field-proven RF measurement instrument and is actively maintained and developed.
 
-- amateur radio operation
-- RF engineering and measurement
-- spectrum monitoring
-- field signal analysis
-- educational RF exploration
+The firmware is stable for:
+
+- frequency scanning and display
+- signal measurement
+- SWR evaluation
+- grid-dip operation
+- touchscreen interface
+
+Ongoing improvements focus on:
+
+- measurement accuracy refinement
+- UI responsiveness
+- calibration robustness
+- battery efficiency
 
 ---
 
@@ -217,72 +311,90 @@ It is primarily intended for:
 
 | Feature | Status |
 |---|---|
-| Real-time spectrum display | Functional |
-| Frequency sweep and scan | Functional |
-| Peak detection | Functional |
-| RSSI measurement | Functional |
-| Touch interface | Functional |
-| Zoom and detail view | Functional |
-| Peak hold | Functional |
-| Frequency markers | Planned |
-| Signal logging | Planned |
-| Measurement history | In development |
-| Calibration procedures | Planned |
-| Advanced filtering | Planned |
+| Graphical frequency sweep | ✓ Functional |
+| Touch interface | ✓ Functional |
+| SWR measurement | ✓ Functional |
+| Signal level measurement | ✓ Functional |
+| Grid-dip meter mode | ✓ Functional |
+| Calibration menus | ✓ Functional |
+| Frequency preset templates | ✓ Implemented |
+| Peak detection and hold | ✓ Implemented |
+| Battery level display | ✓ Implemented |
+| EEPROM configuration storage | ✓ Implemented |
+| Advanced filtering | — Planned |
+| Data logging | — Planned |
+| Expanded frequency range | — Planned |
 
 ---
 
-## References
+## Technical Notes
 
-**Original Project:**
-- EB7ME Antuino — https://github.com/EB7ME/Antuino
+### Frequency Accuracy
 
-**Additional Information:**
-- YO6PIR Project Details — https://qsl.net/yo6pir/snipper3.html
+Frequency accuracy depends on Si5351 crystal calibration. The firmware includes an on-screen calibration routine using a 10 MHz reference. With proper calibration, frequency error should be <50 ppm across the operating range.
+
+### Measurement Range
+
+- **Signal Level:** approximately −85 dBm to 0 dBm (limited by ADC and front-end)
+- **SWR:** 1.0 to 9.99 (limited by return-loss measurement range)
+- **Frequency:** 0.5 MHz to 150 MHz (hardware dependent)
+
+### ADC Sampling
+
+The ADC operates in a continuous scan mode with averaging (8 samples per reading) to reduce noise.
+
+### Display Update Rate
+
+The graphical display is updated continuously during a sweep. Update speed depends on:
+
+- span width (larger spans take longer)
+- touch interaction
+- ADC averaging settings
+
+Typical sweep time: 500 ms to 2 seconds for a full 300-pixel trace.
 
 ---
 
-## Project Principles
+## Credits and Attribution
 
-- field-proven measurements
-- intuitive touchscreen interface
-- reliable and stable operation
-- battery-powered portability
-- easy firmware updates
-- responsive peak detection
+**Original Concept:** Andreas EB7ME — Antuino project (2019)
 
----
+**Development & Enhancements:** Ovidiu YO6PIR
 
-## Building and Flashing
-
-Firmware compilation uses the Arduino IDE or PlatformIO with STM32 board support.
-
-```bash
-# Using Arduino IDE:
-# 1. Install STM32 board package
-# 2. Select board: Generic STM32F4 series
-# 3. Configure upload method
-# 4. Compile and upload
-
-# Using PlatformIO:
-platformio run -t upload
-```
-
-Detailed build instructions are available in the project documentation.
+RF_Sniper-Ver.3 represents a practical continuation of the Antuino concept, modernizing the platform with contemporary embedded systems techniques while maintaining the core philosophy of a compact, portable RF measurement tool.
 
 ---
 
 ## License
 
-This project is provided for educational, experimental, and personal development use.
+This project is distributed under the **GNU General Public License v2.0**.
 
-See the repository license for the applicable terms.
+See the [LICENSE](LICENSE) file for full terms and conditions.
 
 ---
 
-## Project Credits
+## References
 
-**Original Concept:** Andreas EB7ME — Antuino project
-**Development & Improvements:** Ovidiu YO6PIR — RF_Sniper-Ver.3
+- **Project Documentation:** https://qsl.net/yo6pir/snipper3.html
+- **Original Antuino:** EB7ME concepts and methodology
+- **Si5351 Library:** Etherkit Si5351 Arduino Library
+- **Display Library:** Adafruit ILI9341 TFT Library
+- **Touch Library:** Paul Stoffregen's XPT2046 Touchscreen Library
 
-RF_Sniper-Ver.3 represents a practical evolution of portable RF measurement, bringing modern touchscreen interface and STM32 performance to field spectrum analysis.
+---
+
+## Support and Contribution
+
+For issues, questions, or contributions, please:
+
+1. Check the [project documentation](https://qsl.net/yo6pir/snipper3.html)
+2. Review existing code and comments
+3. Open an issue or pull request on GitHub
+
+This is an active amateur radio project. Feedback and improvements are welcome from the community.
+
+---
+
+**Last Updated:** December 2025  
+**Firmware Version:** 3.5  
+**Status:** Active Development
