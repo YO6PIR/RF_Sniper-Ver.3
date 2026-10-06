@@ -30,9 +30,7 @@ Key design goals:
 
 ### Graphical Scan Display
 
-<p align="center">
-  <img width="600" alt="[PLACEHOLDER: VOB/SNA Scan Mode - Screenshot showing graphical frequency sweep with cyan or green trace, peak/min values displayed at bottom]" src="PLACEHOLDER_SCAN_DISPLAY" />
-</p>
+<img width="594" height="420" alt="image" src="https://github.com/user-attachments/assets/95080073-3b35-4139-877c-51339b73545c" />
 
 *Screenshot of VOB or SNA measurement mode showing real-time graphical sweep across frequency range, with minimum and maximum signal levels indicated.*
 
